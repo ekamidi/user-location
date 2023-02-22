@@ -8,7 +8,7 @@ def get_user_location():
    # Get the user's location data from am external API or a database using the query parameters
   lat = request.args.get('lat')
   lng = request.args.get('lng')
-  response = requests.get(f'https://maps.googleapis.com/maps/api/location?lat={lat}&lng={lng}')
+  response = requests.get(f'https://maps.googleapis.com/maps/api/geocode/json?lat={lat}&lng={lng}')
   data = response.json()
 
   # Return the user's location data as a JSON response
